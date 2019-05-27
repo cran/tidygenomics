@@ -1,5 +1,7 @@
 # tidygenomics
 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/tidygenomics)](https://cran.r-project.org/package=tidygenomics)
+
 Tidy Verbs for Dealing with Genomic Data Frames
 
 ## Description
@@ -12,7 +14,10 @@ popular bedtools and the genome_join() method from the fuzzyjoin package.
 ## Installation
 
 ```
-devtools::install_github("Artjom-Metro/tidygenomics")
+install.packages("tidygenomics")
+
+# Or to get the latest development version
+devtools::install_github("const-ae/tidygenomics")
 ```
 
 ## Documentation
@@ -158,7 +163,7 @@ genome_complement(x1, by=c("chromosome", "start", "end"))
 
 #### genome_join
 
-Classical join function based on the overlap of the interval. Implemented and mainted in the
+Classical join function based on the overlap of the interval. Implemented and maintained in the
 [fuzzyjoin](https://github.com/dgrtwo/fuzzyjoin) package and documented here only for completeness.
 
 <img src="vignettes/resources/genome_join_docu.png" alt="genome_join" style="width: 100%;"/>

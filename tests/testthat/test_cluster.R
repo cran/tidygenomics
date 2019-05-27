@@ -3,7 +3,7 @@ context("genome_cluster")
 
 library(dplyr)
 
-x1 <- data_frame(id = 1:4, bla=letters[1:4],
+x1 <- tibble(id = 1:4, bla=letters[1:4],
                  chromosome = c("chr1", "chr1", "chr2", "chr1"),
                  start = c(100, 120, 300, 260),
                  end = c(150, 250, 350, 450))
@@ -29,4 +29,10 @@ test_that("cluster_interval works", {
   starts <- c(50, 100, 120, 180, 350)
   ends <- c(75, 200, 150, 210, 400)
   expect_equal(cluster_interval(starts, ends), c(0,1,1,1,2))
+
+  starts <- c(500, 300, 150)
+  ends <- c(510, 310, 160)
+  expect_equal(cluster_interval(starts, ends), c(2,1,0))
+
+  expect_equal(cluster_interval(numeric(0), numeric(0)), numeric(0))
 })
